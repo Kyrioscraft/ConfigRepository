@@ -1,1 +1,34 @@
 myconfig: sdfdsdf12123
+
+#spring-boot-starter-actuator 2.0.3 需要配置将如下三个接口暴露出来，才可以直接调接口,而且是POST方法 访问/actuator/refresh刷新
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info,hystrix.stream
+
+spring:
+  application:
+  #json时间显示
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  rabbitmq:
+    virtual-host: my_vhost
+    host: dev.kyrioscraft.com
+    port: 5672
+    username: admin
+    password: admin
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0
+  zipkin:
+#    base-url: http://192.168.201.129:9411/
+    enabled: true
+    sender:
+      type: rabbit
+
