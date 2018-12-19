@@ -27,10 +27,7 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
-##开启feign开关
-feign:
-  hystrix:
-    enabled: true
+
 
 hystrix:
   command:
