@@ -49,3 +49,25 @@ spring:
     enabled: true
     sender:
       type: rabbit
+#日志配置
+logging:
+  level:
+    com.kyrioscraft.cloud.upmsserver: DEBUG
+
+#通用mapper配置
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*/*.xml
+mapper:
+  mappers: tk.mybatis.mapper.common.Mapper
+  identity: MYSQL
+  not-empty: true
+
+# 配置swagger
+swagger:
+  enabled: true
+  base-package: com.kyrioscraft.cloud.upmsserver
+  title: upms-server
+  version: 1.0
+  description: 管理后端服务
+  contact:
+    name: admin
