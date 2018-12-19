@@ -32,3 +32,7 @@ spring:
     sender:
       type: rabbit
 
+##开启feign开关
+feign:
+  hystrix:
+    enabled: true
